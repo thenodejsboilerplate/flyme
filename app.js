@@ -62,6 +62,13 @@ config.hostname = urlinfo.hostname || config.host;
 
 var app = express();
 
+/** new added***/
+let util = require('./libs/util');
+app.use(function (req, res, next) {
+  res.locals.isMobile = util.isMobile(req);
+  console.log('isMobile'+res.locals.isMobile)
+  next();
+});
 // configuration in all env
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
@@ -160,6 +167,8 @@ app.use(busboy({
 app.use('/api/v1', cors(), apiRouterV1);
 app.use('/', webRouter);
 
+
+
 // error handler
 if (config.debug) {
   app.use(errorhandler());
@@ -178,5 +187,8 @@ if (!module.parent) {
     logger.info('');
   });
 }
+
+
+
 
 module.exports = app;

@@ -19,7 +19,7 @@ var config       = require('../config');
 var _            = require('lodash');
 var cache        = require('../common/cache');
 var logger = require('../common/logger')
-
+//var util = require("../libs/util");
 /**
  * Topic page
  *
@@ -50,6 +50,7 @@ exports.index = function (req, res, next) {
       no_reply_topics: no_reply_topics,
       is_uped: isUped,
       is_collect: is_collect,
+      //isMobile: util.isMobile
     });
   });
 

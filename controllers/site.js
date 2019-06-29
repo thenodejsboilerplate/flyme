@@ -18,6 +18,7 @@ var xmlbuilder   = require('xmlbuilder');
 var renderHelper = require('../common/render_helper');
 var _            = require('lodash');
 var moment = require('moment');
+// var util = require("../libs/util");
 
 exports.index = function (req, res, next) {
   var page = parseInt(req.query.page, 10) || 1;
@@ -110,6 +111,7 @@ exports.index = function (req, res, next) {
         tabs: config.tabs,
         tab: tab,
         pageTitle: tabName && (tabName + '版块'),
+       // isMobile: util.isMobile
       });
     });
 };

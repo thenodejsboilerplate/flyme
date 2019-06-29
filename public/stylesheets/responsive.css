@@ -31,12 +31,29 @@
       display: block;
       margin: 0 auto;
   }
+  
+  /* new added*/
+  #main{
+  
+  }
+  #main  .ads{ 
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0;
+  }  
+
+  .navbar-inner {
+    width: 100%;
+    padding-left:0;
+  }
+
 }
 
 @media (max-width: 979px) {
-
+ 
   .navbar {
-      margin: 0 5px;
+      margin: 0 0;
       z-index: 999;
       width: auto !important;
   }
@@ -58,12 +75,12 @@
 
   #main {
       /*overflow: hidden;*/
-      margin: 20px auto;
+      margin: 10px auto;
       min-height: 0;
   }
 
   #content .panel {
-      margin: 0 5px;
+      margin: 0 3px;
   }
 
   #sidebar {
@@ -164,4 +181,19 @@
   .user_profile {
     margin-top: 0;
   }
+
+  /**new**/
+  #main .ads{
+    margin:0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    
+  } 
+  .navbar-inner{
+    padding-left:0;
+  }
+
+
+
 }

@@ -7,7 +7,7 @@ var tools          = require('../common/tools');
 var utility        = require('utility');
 var authMiddleWare = require('../middlewares/auth');
 var uuid           = require('node-uuid');
-
+var util = require('../libs/util');
 //sign up
 exports.showSignup = function (req, res) {
   res.render('sign/signup');
@@ -85,7 +85,9 @@ exports.signup = function (req, res, next) {
  */
 exports.showLogin = function (req, res) {
   req.session._loginReferer = req.headers.referer;
-  res.render('sign/signin');
+  res.render('sign/signin',{
+    //isMobile: util.isMobile
+  });
 };
 
 /**
